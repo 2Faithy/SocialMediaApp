@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="navigateToHome()">Home</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Form to enter profile details -->
+  <div *ngIf="!isProfileSaved" class="profile-form">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Name</ion-label>
+        <ion-input [(ngModel)]="name" placeholder="Enter your name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input [(ngModel)]="email" type="email" placeholder="Enter your email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Bio</ion-label>
+        <ion-textarea [(ngModel)]="bio" placeholder="Enter your bio"></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    <label for="fileInput" style="display: block; cursor: pointer;" *ngIf="!uploadedImageUrl">
+      <ion-item>
+        <ion-label position="stacked">Upload Image</ion-label>
+        <input id="fileInput" type="file" (change)="onFileSelected($event)" style="display: none;">
+      </ion-item>
+    </label>
+
+    <div *ngIf="uploadedImageUrl" class="uploaded-image-container">
+      <p>Image uploaded successfully!</p>
+      <img [src]="uploadedImageUrl" alt="Uploaded Image" class="profile-image">
+      <ion-button (click)="deleteImage()" color="danger">Delete Image</ion-button>
+      <ion-button (click)="triggerFileInput()">Replace Image</ion-button>
+    </div>
+
+    <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+
+    <div *ngIf="errorMessage" class="error-message">
+      <p>{{ errorMessage }}</p>
+    </div>
+
+    <ion-button expand="full" color="primary" (click)="saveProfile()">Save Profile</ion-button>
+  </div>
+
+  <!-- Display saved profile details -->
+  <div *ngIf="isProfileSaved" class="profile-details">
+    <h2>Profile Details</h2>
+    <p><strong>Name:</strong> {{ savedProfile?.name }}</p>
+    <p><strong>Email:</strong> {{ savedProfile?.email }}</p>
+    <p><strong>Bio:</strong> {{ savedProfile?.bio }}</p>
+    <img *ngIf="savedProfile?.profileImageUrl" [src]="savedProfile?.profileImageUrl" alt="Profile Image" class="profile-image">
+  </div>
+</ion-content>

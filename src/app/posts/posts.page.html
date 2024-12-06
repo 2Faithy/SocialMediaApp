@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Posts</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="navigateToHome()">Home</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!-- Iterate over posts -->
+    <ion-item-group *ngFor="let post of posts">
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img [src]="post.imageUrl || 'assets/default-image.jpg'" />
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.content }}</p>
+          <ion-chip color="primary">{{ post.category }}</ion-chip>
+          <div class="post-actions">
+            <ion-button (click)="editPost(post)" fill="clear" color="primary">Edit</ion-button>
+            <ion-button (click)="deletePost(post.id)" fill="clear" color="danger">Delete</ion-button>
+            <ion-button (click)="likePost(post.id)" fill="clear" color="tertiary">
+              Like ({{ post.likes || 0 }})
+            </ion-button>
+          </div>
+        </ion-label>
+      </ion-item>
+
+      <!-- Comments Section -->
+      <ion-card class="comments-section">
+        <ion-card-header>
+          <ion-card-title>Comments</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <!-- Existing Comments -->
+          <ion-list>
+            <ion-item *ngFor="let comment of comments[post.id]">
+              <ion-label>
+                <h3>{{ comment.userId }}</h3>
+                <p>{{ comment.content }}</p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+          <!-- Add New Comment -->
+          <div class="add-comment">
+            <ion-input [(ngModel)]="newComment" placeholder="Add a comment..."></ion-input>
+            <ion-button (click)="addComment(post.id)">Submit</ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,63 @@
+// Styling the profile form
+.profile-form {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f3f3f3;
+  }
+  
+  ion-list {
+    margin-bottom: 20px;
+  }
+  
+  ion-item {
+    --background: black;
+    margin-bottom: 15px;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  // Styling the saved profile details
+  .profile-details {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: black;
+    text-align: center;
+  }
+  
+  .profile-details h2 {
+    color: #4CAF50;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .profile-details p {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
+  .profile-details img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  // Additional button styling for a more customized look
+  ion-button {
+    --background: linear-gradient(135deg, #6D5BBA, #8D58BF);
+    --color: white;
+    --border-radius: 20px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+  }
+  

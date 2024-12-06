@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Zyloconnect</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Logout</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="welcome-section">
+      <ion-col size="12">
+        <h2 class="welcome-title">Welcome to Zyloconnect, {{ user?.email || 'Guest' }}!</h2>
+        <p class="welcome-message">
+          Together, we can create safer and more connected communities. Use this app to report incidents, stay informed about local updates, and connect with friends and neighbors. Your voice matters, and with Zyloconnect, it can make a difference.
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="features-section">
+      <ion-col size="12" class="feature-intro">
+        <p>Explore our features to get started:</p>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card color="light" (click)="navigateToFeature('profile')">
+          <ion-card-header>
+            <ion-card-title>Profile</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card color="secondary" (click)="navigateToFeature('create-post')">
+          <ion-card-header>
+            <ion-card-title>New Post</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card color="tertiary" (click)="navigateToFeature('posts')">
+          <ion-card-header>
+            <ion-card-title>Posts</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-footer class="footer-section">
+    <ion-toolbar color="dark">
+      <div class="footer-content">
+        <p class="footer-text">© 2024 Zyloconnect. All rights reserved.</p>
+      </div>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ isLogin ? 'Login' : 'Sign Up' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type="email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="handleAuth()">
+    {{ isLogin ? 'Log In' : 'Sign Up' }}
+  </ion-button>
+
+  <ion-text>
+    <p>
+      {{ isLogin ? "Don't have an account?" : 'Already have an account?' }}
+      <ion-button fill="clear" (click)="toggleAuthMode()">
+        {{ isLogin ? 'Sign Up' : 'Log In' }}
+      </ion-button>
+    </p>
+  </ion-text>
+</ion-content>

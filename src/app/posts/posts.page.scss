@@ -1,0 +1,75 @@
+ion-content {
+    padding: 16px;
+  }
+  
+  ion-item {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+  }
+  
+  ion-thumbnail img {
+    border-radius: 8px;
+  }
+  
+  ion-chip {
+    margin-top: 8px;
+  }
+  
+  ion-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  ion-button {
+    --background: transparent;
+  }
+  
+  ion-list {
+    margin-top: 16px;
+  }
+  
+  .comments-section {
+    margin-top: 20px;
+    padding: 12px;
+    background: rgb(27, 27, 27);
+    border-radius: 12px;
+  }
+  
+  .comments-section h3 {
+    margin: 0;
+  }
+  
+  .post-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  
+  .comments-section {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 8px;
+  }
+  
+  .comments-section ion-card-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .add-comment {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  .add-comment ion-input {
+    flex: 1;
+  }
+
+  .add-comment ion-button {
+    color: greenyellow;
+  }
+  
